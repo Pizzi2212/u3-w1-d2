@@ -1,7 +1,8 @@
 import { NavDropdown, Navbar, Container, Nav } from 'react-bootstrap'
+import { useState } from 'react'
 
 const CustomNavbar = (props) => {
-  console.log('PROPS DELLA NAVBAR', props)
+  const [searcher, setSearcher] = useState('')
   return (
     <Navbar
       className="fixed-top"
@@ -22,6 +23,11 @@ const CustomNavbar = (props) => {
               <NavDropdown.Item href="#action/3.3">Romance</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Scifi</NavDropdown.Item>
             </NavDropdown>
+            <input
+              type="text"
+              value={searcher}
+              onChange={(e) => setSearcher(e.target.value)}
+            />
             <Nav.Link href="#features">Home</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
             <Nav.Link href="#pricing">Browse</Nav.Link>

@@ -4,9 +4,14 @@ import CustomNavbar from './components/MyNavComponents'
 import MyFooter from './components/MyFooterComponents'
 import Welcome from './components/Welcome'
 import MyAlert from './components/Alert'
-import MyBooks from './components/MainContent'
-import MyBooksHorror from './components/MainContent'
+import Fantasy from './data/fantasy.json'
+import Horror from './data/horror.json'
+import Romance from './data/romance.json'
+import Scifi from './data/scifi.json'
 import { Container, Row } from 'react-bootstrap'
+import BookList from './components/Booklist'
+
+const books = [...Fantasy, ...Horror, ...Romance, ...Scifi]
 
 function App() {
   return (
@@ -19,7 +24,7 @@ function App() {
         <Welcome />
         <Container>
           <Row className="justify-content-center pt-3 d-flex">
-            <MyBooks />
+            <BookList books={books} />
           </Row>
         </Container>
       </main>
