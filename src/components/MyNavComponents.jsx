@@ -13,6 +13,12 @@ const CustomNavbar = ({ searcher, setSearcher, subtitle }) => {
         <Navbar.Brand href="#home">Max - {subtitle}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+          <input
+            placeholder="Cerca i tuoi libri"
+            type="text"
+            value={searcher}
+            onChange={(e) => setSearcher(e.target.value)}
+          />
           <Nav className="ms-auto">
             <NavDropdown title="Genres" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Fantasy</NavDropdown.Item>
@@ -21,11 +27,7 @@ const CustomNavbar = ({ searcher, setSearcher, subtitle }) => {
               <NavDropdown.Item href="#action/3.3">Romance</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Scifi</NavDropdown.Item>
             </NavDropdown>
-            <input
-              type="text"
-              value={searcher}
-              onChange={(e) => setSearcher(e.target.value)}
-            />
+
             <Nav.Link href="#features">Home</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
             <Nav.Link href="#pricing">Browse</Nav.Link>
