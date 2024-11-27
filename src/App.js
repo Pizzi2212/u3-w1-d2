@@ -10,21 +10,27 @@ import Romance from './data/romance.json'
 import Scifi from './data/scifi.json'
 import { Container, Row } from 'react-bootstrap'
 import BookList from './components/Booklist'
+import { useState } from 'react'
 
 const books = [...Fantasy, ...Horror, ...Romance, ...Scifi]
 
 function App() {
+  const [searcher, setSearcher] = useState('')
   return (
     <div className="App">
       <header>
-        <CustomNavbar subtitle="Library" />
+        <CustomNavbar
+          searcher={searcher}
+          setSearcher={setSearcher}
+          subtitle="Library"
+        />
       </header>
       <main>
         <MyAlert />
         <Welcome />
         <Container>
           <Row className="justify-content-center pt-3 d-flex">
-            <BookList books={books} />
+            <BookList searcher={searcher} books={books} />
           </Row>
         </Container>
       </main>

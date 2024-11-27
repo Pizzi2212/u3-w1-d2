@@ -1,8 +1,6 @@
 import { NavDropdown, Navbar, Container, Nav } from 'react-bootstrap'
-import { useState } from 'react'
 
-const CustomNavbar = (props) => {
-  const [searcher, setSearcher] = useState('')
+const CustomNavbar = ({ searcher, setSearcher, subtitle }) => {
   return (
     <Navbar
       className="fixed-top"
@@ -11,8 +9,8 @@ const CustomNavbar = (props) => {
       bg="dark"
       data-bs-theme="dark"
     >
-      <Container fluid={props.isFluid}>
-        <Navbar.Brand href="#home">Max - {props.subtitle}</Navbar.Brand>
+      <Container>
+        <Navbar.Brand href="#home">Max - {subtitle}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
