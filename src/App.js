@@ -11,7 +11,6 @@ import Scifi from './data/scifi.json'
 import { Container, Row } from 'react-bootstrap'
 import BookList from './components/Booklist'
 import { useState } from 'react'
-
 const books = [...Fantasy, ...Horror, ...Romance, ...Scifi]
 
 function App() {

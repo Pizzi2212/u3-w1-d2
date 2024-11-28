@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import { Component } from 'react'
+import Comment from './CommentArea'
 
 class SingleBook extends Component {
   state = {
@@ -36,6 +37,7 @@ class SingleBook extends Component {
             Buy
           </Button>
         </Card.Body>
+        {selected && <Comment id={this.props.book.id} />}
       </Card>
     )
   }

@@ -1,4 +1,5 @@
-import { NavDropdown, Navbar, Container, Nav } from 'react-bootstrap'
+import { NavDropdown, Navbar, Container, Nav, Form } from 'react-bootstrap'
+import { Link, NavLink } from 'react-router-dom'
 
 const CustomNavbar = ({ searcher, setSearcher, subtitle }) => {
   return (
